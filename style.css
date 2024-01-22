@@ -4,3 +4,47 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     box-sizing: border-box;
 }
+.container {
+    width:100%;
+    height:100vh;
+    background: linear-gradient(rgb(218, 172, 172),rgb(121, 168, 121),rgba(0,0,0,0.2));
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu{
+    background-color: aqua;
+    border-radius: 50px;
+    padding:10px 35px;
+}
+.menu ul li {
+    display:inline-block;
+    list-style-type: none;
+    padding:10px;
+    font-size:25px;
+    color:rgb(98, 66, 128);
+    position:relative;
+    z-index:2;
+    transition: color 1s;
+}
+ul li::after{
+    content: "";
+    background: brown;
+    height:40px;
+    width:100%;
+    border-radius: 40px;
+    position:absolute;
+    top:50%;
+    left:0;
+    z-index:-1;
+    opacity:0;
+    transition: top 0.5s, opacity 0.5s;
+}
+ul li:hover{
+    color:white;
+    cursor:pointer;
+}
+ul li:hover::after{
+    top:15%;
+    opacity:1;
+}
